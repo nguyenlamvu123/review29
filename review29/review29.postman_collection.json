@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "5e90ee48-b2d7-48c7-87e1-f31890490456",
+		"name": "review29",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8752545"
+	},
+	"item": [
+		{
+			"name": "save a record",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Key",
+						"value": "X-CSRFToken",
+						"type": "text"
+					},
+					{
+						"key": "Value",
+						"value": "{{csrftoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "video_url",
+							"value": "https://www.youtube.com/watch?v=uj1qdsfJ2-U",
+							"type": "text"
+						},
+						{
+							"key": "aff_link_1",
+							"value": "https://www.youtube.com/watch?v=PCSaqek18PI&list=RDPCSaqek18PI&start_radio=1&pp=oAcB",
+							"type": "text"
+						},
+						{
+							"key": "aff_link_2",
+							"value": "https://www.youtube.com/watch?v=1ORDCsC0_L4&list=RD1ORDCsC0_L4&start_radio=1&pp=oAcB",
+							"type": "text"
+						},
+						{
+							"key": "aff_link_4",
+							"value": "https://www.youtube.com/watch?v=qoqjxg7HXiY&list=RDqoqjxg7HXiY&start_radio=1&pp=oAcB",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/save-review/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"save-review",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save token to env variable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var xsrfCookie = pm.cookies.get(\"csrftoken\");",
+							"pm.environment.set(\"csrftoken\", xsrfCookie);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list_reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/reviews/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "use video url to search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/review-by-url/?video_url=https://www.google.com/url?sa=t%26source=web%26rct=j%26opi=89978449%26url=https://www.youtube.com/watch%3Fv%3Duj1qdsfJ2-U%26ved=2ahUKEwjvjZmsidaOAxUbZvUHHbhxEJIQtwJ6BAgPEAI%26usg=AOvVaw2N0T9riSCruX_cHzBcdjO0",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"review-by-url",
+						""
+					],
+					"query": [
+						{
+							"key": "video_url",
+							"value": "https://www.google.com/url?sa=t%26source=web%26rct=j%26opi=89978449%26url=https://www.youtube.com/watch%3Fv%3Duj1qdsfJ2-U%26ved=2ahUKEwjvjZmsidaOAxUbZvUHHbhxEJIQtwJ6BAgPEAI%26usg=AOvVaw2N0T9riSCruX_cHzBcdjO0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

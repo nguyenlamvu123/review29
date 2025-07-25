@@ -17,12 +17,13 @@ import requests
 # response = requests.request("POST", url, headers=headers, data=payload, files=files)
 
 # url = "http://127.0.0.1:8000/"
-url = "http://127.0.0.1:8000/review-by-url/?video_url=https://www.youtube.com/watch?v=uj1qdsfJ2-U"
-# url = "http://127.0.0.1:8000/reviews/"
+# url = "http://127.0.0.1:8000/review-by-url/?video_url=https://www.youtube.com/watch?v=uj1qdsfJ2-U"
+url = "http://127.0.0.1:8000/reviews/"
 
 payload = {}
 headers = {}
 
 response = requests.request("GET", url, headers=headers, data=payload)
 
+print(response.status_code)
 print(response.text)
