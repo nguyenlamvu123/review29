@@ -21,7 +21,16 @@ def save_review_view(request):
     return JsonResponse({'error': 'Chỉ hỗ trợ phương thức POST'}, status=405)
 
 def list_reviews(request):
-    reviews = ProductReview.objects.all().values()
+    reviews = ProductReview.objects.all().values(
+        'id',
+        'video_url',
+        'video_file',
+        'aff_link_1',
+        'aff_link_2',
+        'aff_link_3',
+        'aff_link_4',
+        'aff_link_5'
+    )
     return JsonResponse(list(reviews), safe=False)
 
 def get_review_by_url(request):
@@ -30,8 +39,10 @@ def get_review_by_url(request):
         return JsonResponse({'error': 'Thiếu tham số video_url'}, status=400)
 
     try:
-        review = ProductReview.objects.get(video_url=url)
+        # review = ProductReview.objects.get(video_url=url)  # error if review.id is None
+        review = ProductReview.objects.filter(video_url=url).first()
         data = {
+            'id': review.id,
             'video_url': review.video_url,
             'video_file': review.video_file.url if review.video_file else None,
             'aff_link_1': review.aff_link_1,

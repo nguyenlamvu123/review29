@@ -43,6 +43,11 @@
 							"type": "text"
 						},
 						{
+							"key": "video_file",
+							"type": "file",
+							"src": "Py9jpKWUN/THẾ THÁI - HƯƠNG LY ｜ OFFICIAL TRAILER.mp4"
+						},
+						{
 							"key": "aff_link_1",
 							"value": "https://www.youtube.com/watch?v=PCSaqek18PI&list=RDPCSaqek18PI&start_radio=1&pp=oAcB",
 							"type": "text"
@@ -50,11 +55,23 @@
 						{
 							"key": "aff_link_2",
 							"value": "https://www.youtube.com/watch?v=1ORDCsC0_L4&list=RD1ORDCsC0_L4&start_radio=1&pp=oAcB",
-							"type": "text"
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "aff_link_3",
+							"value": "https://www.youtube.com/watch?v=qoqjxg7HXiY&list=RDqoqjxg7HXiY&start_radio=1&pp=oAcB",
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "aff_link_4",
-							"value": "https://www.youtube.com/watch?v=qoqjxg7HXiY&list=RDqoqjxg7HXiY&start_radio=1&pp=oAcB",
+							"value": "https://www.youtube.com/watch?v=Mm04_wWXT5A&list=PLRHOq3SBgkt8w0CHhRX4GQgf7pYdVYnMU&index=24",
+							"type": "text"
+						},
+						{
+							"key": "aff_link_5",
+							"value": "https://www.youtube.com/watch?v=hcmuvCBBxXc&list=PLRHOq3SBgkt8w0CHhRX4GQgf7pYdVYnMU&index=234",
 							"type": "text"
 						}
 					]

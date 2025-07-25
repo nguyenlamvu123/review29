@@ -2,3 +2,4 @@ django==2.2
 djongo==1.3.6
 pymongo
 pytz
+django-cors-headers<3.0

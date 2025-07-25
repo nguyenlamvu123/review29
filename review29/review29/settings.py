@@ -25,9 +25,16 @@ SECRET_KEY = 'django-insecure-)n_@7ha&34rrxrrg(f@44!qk1=ko)931jekq4w3bb&l7*rs%u1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'api.review29.com',
+]
 
-
+# CORS_ALLOWED_ORIGINS = [
+#     "https://example.com",
+#     "http://localhost:3000",
+# ]  # TODO
+CORS_ALLOW_ALL_ORIGINS = True  # Hoặc CORS_ORIGIN_ALLOW_ALL = True nếu dùng phiên bản cũ
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,10 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rev',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -113,6 +122,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+APPEND_SLASH = True
 
 
 # Static files (CSS, JavaScript, Images)
