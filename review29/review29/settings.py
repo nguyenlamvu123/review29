@@ -77,9 +77,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'my_mongo_db',
+        'CLIENT': {
+            'host': 'mongodb://mongo:27017',
+        }
     }
 }
-
 
 
 # Password validation
